@@ -1,4 +1,4 @@
-# テーブル設計
+# テーブル設計b
 
 ## users テーブル
 
@@ -10,41 +10,55 @@
 
 ### Association
 
-- has_many :rooms
+- has_many :purchase_items
 - has_many :items
-- has_many :room_users
+- has_many :purchases, through: purchase_items
 
-## rooms テーブル
-| Column   | Type      | Options     |
-| -------- | --------- | ----------- |
-| item     | reference | null: false |
-| price    | string    | null: false |
-| image    | string    | null: false |
+## purchases テーブル
+| Column        | Type      | Options     |
+| ------------- | --------- | ----------- |
+| card_number   | integer   | null: false |
+| card_month    | integer   | null: false |
+| card_year     | integer   | null: false |
+| secure_number | integer   | null: false |
+| postal_code   | integer   | null: false |
+| prefectures   | reference | null: false |
+| city          | string    | null: false |
+| address       | string    | null: false |
+| building_name | string    | null: false |
+| phone_number  | integer   | null: false |
 
-- has_many :users
+### Association
+
+- has_many :users, through: purchase_items
 - has_many :items
-- has_many :room_users
+- has_many :purchase_items
 
 ## items テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| item     | string | null: false |
-| text     | string | null: false |
-| image    | string | null: false |
+| Column   | Type      | Options                        |
+| -------- | --------- | ------------------------------ |
+| image    | reference | null: false, foreign_key: true |
+| title    | string    | null: false                    |
+| content  | text      | null: false                    |
+| price    | integer   | null: false                    |
+| category | reference | null: false                    |
+| status   | reference | null: false                    |
+| burden   | reference | null: false                    |
+| area     | reference | null: false                    |
+| day      | reference | null: false                    |
 
 ### Association
 
-belongs_to :user
-belongs_to :room
+- has_many :users
 
-## room_users テーブル
-| Column   | Type      | Options     |
-| -------- | --------- | ----------- |
-| user    | reference | null: false |
-| comment  | reference | null: false |
+## purchase_items テーブル
+| Column   | Type      | Options                        |
+| -------- | --------- | ------------------------------ |
+| user     | reference | null: false, foreign_key: true |
+| item     | reference | null: false, foreign_key: true |
 
 ### Association
 
-belongs_to :user
-belongs_to :user
+- belongs_to :user
+- belongs_to :item
