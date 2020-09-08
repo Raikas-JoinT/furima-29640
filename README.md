@@ -43,7 +43,7 @@
 | Column   | Type      | Options                        |
 | -------- | --------- | ------------------------------ |
 | title    | string    | null: false                    |
-| content  | string    | null: false                    |
+| content  | text    | null: false                    |
 | price    | string    | null: false                    |
 | category | reference | null: false                    |
 | status   | reference | null: false                    |
