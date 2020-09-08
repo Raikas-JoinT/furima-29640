@@ -2,11 +2,19 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| Column                | Type       | Options     |
+| --------------------- | ---------- | ----------- |
+| name                  | string     | null: false |
+| email                 | string     | null: false |
+| password              | string     | null: false |
+| password_confirmation | string     | null: false |
+| family_name           | string     | null: false |
+| first_name            | string     | null: false |
+| family_name_cana      | string     | null: false |
+| first_name_cana       | string     | null: false |
+| year                  | reference  | null: false |
+| month                 | reference  | null: false |
+| day                   | reference  | null: false |
 
 ### Association
 
@@ -17,16 +25,12 @@
 ## purchases テーブル
 | Column        | Type      | Options     |
 | ------------- | --------- | ----------- |
-| card_number   | integer   | null: false |
-| card_month    | integer   | null: false |
-| card_year     | integer   | null: false |
-| secure_number | integer   | null: false |
-| postal_code   | integer   | null: false |
-| prefectures   | reference | null: false |
+| postal_code   | string    | null: false |
+| prefectures   | string    | null: false |
 | city          | string    | null: false |
 | address       | string    | null: false |
-| building_name | string    | null: false |
-| phone_number  | integer   | null: false |
+| building_name | string    |             |
+| phone_number  | string    | null: false |
 
 ### Association
 
@@ -38,10 +42,9 @@
 
 | Column   | Type      | Options                        |
 | -------- | --------- | ------------------------------ |
-| image    | reference | null: false, foreign_key: true |
 | title    | string    | null: false                    |
-| content  | text      | null: false                    |
-| price    | integer   | null: false                    |
+| content  | string    | null: false                    |
+| price    | string    | null: false                    |
 | category | reference | null: false                    |
 | status   | reference | null: false                    |
 | burden   | reference | null: false                    |
@@ -50,7 +53,7 @@
 
 ### Association
 
-- has_many :users
+- belongs_to :users
 
 ## purchase_items テーブル
 | Column   | Type      | Options                        |
