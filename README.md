@@ -12,9 +12,7 @@
 | first_name            | string     | null: false |
 | family_name_cana      | string     | null: false |
 | first_name_cana       | string     | null: false |
-| year                  | reference  | null: false |
-| month                 | reference  | null: false |
-| day                   | reference  | null: false |
+| birthday              | datetime   | null: false |
 
 ### Association
 
@@ -26,7 +24,7 @@
 | Column        | Type      | Options     |
 | ------------- | --------- | ----------- |
 | postal_code   | string    | null: false |
-| prefectures   | string    | null: false |
+| prefectures   | integer   | null: false |
 | city          | string    | null: false |
 | address       | string    | null: false |
 | building_name | string    |             |
@@ -43,17 +41,17 @@
 | Column   | Type      | Options                        |
 | -------- | --------- | ------------------------------ |
 | title    | string    | null: false                    |
-| content  | text    | null: false                    |
-| price    | string    | null: false                    |
-| category | reference | null: false                    |
-| status   | reference | null: false                    |
-| burden   | reference | null: false                    |
-| area     | reference | null: false                    |
-| day      | reference | null: false                    |
+| content  | text      | null: false                    |
+| price    | integer   | null: false                    |
+| category | integer   | null: false                    |
+| status   | integer   | null: false                    |
+| burden   | integer   | null: false                    |
+| area     | integer   | null: false                    |
+| day      | integer   | null: false                    |
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 
 ## purchase_items テーブル
 | Column   | Type      | Options                        |
@@ -63,5 +61,5 @@
 
 ### Association
 
-- belongs_to :user
-- belongs_to :item
+- has_one :user
+- has_one :item
