@@ -6,8 +6,7 @@
 | --------------------- | ---------- | ----------- |
 | name                  | string     | null: false |
 | email                 | string     | null: false |
-| password              | string     | null: false |
-| password_confirmation | string     | null: false |
+| encrypted_password    | string     | null: false |
 | family_name           | string     | null: false |
 | first_name            | string     | null: false |
 | family_name_cana      | string     | null: false |
