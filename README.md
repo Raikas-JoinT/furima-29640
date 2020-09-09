@@ -49,7 +49,7 @@
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - has_one :addresses_item
 
 ## addresses_items テーブル
