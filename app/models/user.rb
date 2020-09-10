@@ -9,9 +9,12 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :first_name
-    validates :last_name
-    validates :first_name_kana
-    validates :last_name_kana
+    validates :email
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+    validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
+    validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
+    validates :first_name_kana, format: { with: /\A[ァ-ヶ]+\z/ }
+    validates :last_name_kana, format: { with: /\A[ァ-ヶ]+\z/ }
   end
+
 end
