@@ -29,7 +29,7 @@ describe User do
         expect(@user.errors.full_messages).to include("Email can't be blank")
       end
       it "メールアドレスに@がなければ登録できない" do
-        @user.email = "@"
+        @user.email = "aaaa.com"
         @user.valid?
         expect(@user.errors.full_messages).to include("Email is invalid")
       end
