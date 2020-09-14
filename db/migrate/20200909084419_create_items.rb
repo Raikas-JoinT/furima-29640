@@ -10,6 +10,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :area
       t.integer :day
       t.references :user, foreign_key: true
+      t.boolean :checked
       t.timestamps
     end
   end

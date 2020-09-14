@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_063906) do
     t.integer "area"
     t.integer "day"
     t.bigint "user_id"
+    t.boolean "checked"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_items_on_user_id"
