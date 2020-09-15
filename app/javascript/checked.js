@@ -7,9 +7,11 @@ function price(){
 
     if (value >= 300 && value <= 9999999){
         let fee = value * 0.1
+        let new_fee = Math.ceil(fee)
         let gains = value - fee
-        add_tax.textContent = fee.toLocaleString();
-        profit.textContent = gains.toLocaleString();
+        let new_gains = Math.ceil(gains)
+        add_tax.textContent = new_fee.toLocaleString();
+        profit.textContent = new_gains.toLocaleString();
     } else {
       let fee = '---';
       let gains = '---';

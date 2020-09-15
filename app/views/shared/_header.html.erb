@@ -17,8 +17,8 @@
     <ul class='lists-right'>
       <% if user_signed_in? %>
         <div class="login-status">
-          <%= link_to current_user.nickname, "#", class: "user-nickname" %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to "#{current_user.nickname}君", "#", class: "user-nickname" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
         </div>
       <% else %>
         <div class="logout-status">

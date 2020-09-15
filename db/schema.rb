@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 2020_09_11_063906) do
     t.string "title", default: "", null: false
     t.text "content"
     t.integer "price"
-    t.integer "category"
-    t.integer "status"
-    t.integer "burden"
-    t.integer "area"
-    t.integer "day"
+    t.integer "category_id"
+    t.integer "status_id"
+    t.integer "burden_id"
+    t.integer "area_id"
+    t.integer "day_id"
     t.bigint "user_id"
     t.boolean "checked"
     t.datetime "created_at", precision: 6, null: false
