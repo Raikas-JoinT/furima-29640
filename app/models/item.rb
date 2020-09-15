@@ -9,15 +9,15 @@ class Item < ApplicationRecord
   has_one :addresses_item
   has_one_attached :image
 
-
   with_options presence: true do
-    validates :title
-    validates :content
+    validates :title, length: { maximum: 40 }
+    validates :content, length: { maximum: 1000 }
     validates :category_id
     validates :status_id
     validates :burden_id
     validates :area_id
     validates :day_id
+
   end
 
   with_options numericality: { other_than: 1 } do
@@ -28,7 +28,5 @@ class Item < ApplicationRecord
     validates :day_id
   end
 
-  validates :price, numericality: {with: /\A[0-9]+\z/},length: {minimum: 3, maxinum: 7},numericality: { only_integer: true,
-  greater_than: 300, less_than: 10000000
-  }
+  validates :price, numericality: {with: /\A[0-9]+\z/}, numericality: { only_integer: true,greater_than: 300, less_than: 10000000}
 end
