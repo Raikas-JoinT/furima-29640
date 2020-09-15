@@ -28,5 +28,7 @@ class Item < ApplicationRecord
     validates :day_id
   end
 
-  validates :price, numericality: { with: /\A[0-9]+\z/ }
+  validates :price, numericality: {with: /\A[0-9]+\z/},length: {minimum: 3, maxinum: 7},numericality: { only_integer: true,
+  greater_than: 300, less_than: 10000000
+  }
 end

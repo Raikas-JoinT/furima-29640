@@ -115,7 +115,7 @@ ja:
       equal_to: は%{count}にしなさい！
       even: は偶数にしなさい！
       exclusion: は予約されてるぞ！
-      greater_than: は%{count}より大きい値にしてなさい！
+      greater_than: は%{count}より大きい値にしなさい！
       greater_than_or_equal_to: は%{count}以上の値にしなさい！
       inclusion: は一覧にないぞ！？
       invalid: は不正な値だぞ！
