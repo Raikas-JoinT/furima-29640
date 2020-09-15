@@ -7,5 +7,10 @@
 .error-message {
   font-size: 1.3vw;
   list-style: circle;
-  color: rgb(182, 48, 0);
+  color: red;
+  background-color: yellow;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 5px;
+  font-weight: 900;
 }

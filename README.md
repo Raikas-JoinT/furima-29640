@@ -35,17 +35,17 @@
 
 ## items テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| title    | string     | null: false                    |
-| content  | text       | null: false                    |
-| price    | integer    | null: false                    |
-| category | integer    | null: false                    |
-| status   | integer    | null: false                    |
-| burden   | integer    | null: false                    |
-| area     | integer    | null: false                    |
-| day      | integer    | null: false                    |
-| user     | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| title       | string     | null: false                    |
+| content     | text       | null: false                    |
+| category_id | integer    | null: false                    |
+| status_id   | integer    | null: false                    |
+| burden_id   | integer    | null: false                    |
+| area_id     | integer    | null: false                    |
+| day_id      | integer    | null: false                    |
+| price       | integer    | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
