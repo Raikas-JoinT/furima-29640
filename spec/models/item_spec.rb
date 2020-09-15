@@ -49,37 +49,37 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Content is too long (maximum is 1000 characters)")
       end
       it "category_idが空では出品できない" do
-        @item.category_id = nil
+        @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category is not a number")
+        expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
       it "status_idが空では出品できない" do
-        @item.status_id = nil
+        @item.status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status is not a number")
+        expect(@item.errors.full_messages).to include("Status must be other than 1")
       end
       it "burden_idが空では出品できない" do
-        @item.burden_id = nil
+        @item.burden_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Burden is not a number")
+        expect(@item.errors.full_messages).to include("Burden must be other than 1")
       end
       it "area_idが空では出品できない" do
-        @item.area_id = nil
+        @item.area_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Area is not a number")
+        expect(@item.errors.full_messages).to include("Area must be other than 1")
       end
       it "day_idが空では出品できない" do
-        @item.day_id = nil
+        @item.day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Day is not a number")
+        expect(@item.errors.full_messages).to include("Day must be other than 1")
       end
       it "priceが300円以下だと出品できない" do
-        @item.price = "299"
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be greater than 300")
       end
       it "priceが9999999円以上だと出品できない" do
-        @item.price = "10000000"
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than 10000000")
       end

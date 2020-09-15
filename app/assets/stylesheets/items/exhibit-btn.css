@@ -11,7 +11,7 @@
 }
 
 .purchase-btn:hover {
-  background-color:#3ccace;
+  background-color:#FF6347;
   opacity: 1;
 }
 
@@ -21,6 +21,7 @@
   font-size: 18px;
   text-decoration: none;
   margin-bottom: 5px;
+  font-weight: 900;
 }
 
 .purchase-btn-icon {
