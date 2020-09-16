@@ -58,6 +58,25 @@
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  border-radius: 15px;
+  box-shadow: 5px 5px #8b0000;
+  opacity: 0.8;
+}
+
+.item-red-btn:hover {
+  opacity: 1;
+  background-color:#ea352d;
+}
+
+.item-red-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px
+}
+
+.item-red-btn:focus {
+	outline:0;
 }
 
 .or-text {
@@ -65,12 +84,27 @@
 }
 
 .item-destroy {
-  background-color: lightgray;
+  color: #fff;
+  background-color: #aaa;
   text-align: center;
-  font-size: 24px;
-  color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  border-radius: 15px;
+  font-size: 15px;
+  box-shadow: 5px 5px #696969;
+  opacity: 0.8;
+}
+
+.item-destroy:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px
+}
+
+.item-destroy:hover {
+  background-color: #aaa;
+  opacity: 1;
 }
 
 .item-explain-box {
