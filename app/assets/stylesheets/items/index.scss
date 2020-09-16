@@ -285,14 +285,15 @@ a {
 .item-img {
   width: 33vh;
   height: 33vh;
-  box-shadow: 7px 7px #696969;
+  box-shadow: 8px 8px #696969;
+  border-radius: 20px;
 }
 
 .item-img:active {
   box-shadow: none;
   position: relative;
-  top: 7px;
-  left: 7px
+  top: 8px;
+  left: 8px
 }
 
 
