@@ -1,0 +1,2 @@
+class AddressesItem < ApplicationRecord
+end
