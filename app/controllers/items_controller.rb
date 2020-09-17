@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  # before_action :set_item, only: [:edit, :show]
+
   def index
     @items = Item.all
     @items = Article.order("created_at DESC")
@@ -21,19 +23,19 @@ class ItemsController < ApplicationController
   # def destroy
   # end
 
-  # def update
-  #   item = Item.find(params[:id])
-  #   if item.update(item_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
 
-  # end
+  end
 
-  # def edit
-  #   @item = Item.find(params[:id])
-  # end
+  def edit
+    @item = Item.find(params[:id])
+  end
 
   def show
     @item = Item.find(params[:id])
