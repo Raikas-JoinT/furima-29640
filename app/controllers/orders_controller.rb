@@ -1,15 +1,11 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @item = Item.find(params[:item_id])
-    if user_signed_in?
-      redirect_to("/items/#{:id}")
-    else
-      redirect_to("users/sign_in")
-    end
   end
 
   def create
-    @address = Item.new(price: address_params[:price])
+    @address = ItemBuy.new(address_params)
     if @address.valid?
       pay_item
       @address.save
@@ -22,7 +18,7 @@ class OrdersController < ApplicationController
   private
 
   def address_params
-    params.permit(:token, :postal_code, :prefecture, :city, :address, :building_name, :phone_number).merge(user_id: current_user.id)
+    params.require(:item_buy).permit(:token, :postal_code, :prefecture, :city, :address, :building_name, :phone_number).merge(user_id: current_user.id)
   end
 
   def pay_item
