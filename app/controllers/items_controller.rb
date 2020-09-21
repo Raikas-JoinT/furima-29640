@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
     @items = Item.all
     @items = Article.order("created_at DESC")
     @items = Item.all.order(id: "DESC")
+    
   end
 
   def new
@@ -34,7 +35,6 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def edit
