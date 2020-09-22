@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   before_action :move_to_index, only: :index
 
   def index
+    @address = ItemBuy.new
   end
 
   def create

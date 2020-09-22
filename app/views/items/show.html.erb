@@ -27,6 +27,8 @@
       <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %>
+    <% elsif @item.addresses_item.present? %>
+      <%= link_to '残念、もう売り切れてますわwww', root_path, class:"disabled-button" %><br>m9(^Д^)くやしいのうwww
     <% else %>
       <%= link_to '購入画面に進む', item_orders_path(@item.id), class:"item-red-btn"%>
     <% end %>
