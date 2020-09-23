@@ -5,12 +5,11 @@ class ItemBuy
 
   with_options presence: true do
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
+    validates :prefecture_id, numericality: { other_than: 1 }
     validates :city
     validates :address
     validates :phone_number, numericality: {with: /\A[0-9]+\z/}
   end
-
-  validates :prefecture_id, numericality: { other_than: 1 }
 
   def save
     item_save = AddressesItem.create(user_id: user_id, item_id: item_id)
