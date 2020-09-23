@@ -221,7 +221,6 @@
 .sell-btn:hover {
   opacity: 1;
   background-color:#ea352d;
-  border: 1px solid#ea352d;
   cursor:pointer
 }
 

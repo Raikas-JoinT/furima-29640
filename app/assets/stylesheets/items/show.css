@@ -79,6 +79,35 @@
 	outline:0;
 }
 
+.disabled-button {
+  text-align: center;
+  background: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border-radius: 15px;
+  box-shadow: 5px 5px #696969;
+  opacity: 0.8;
+}
+
+.disabled-button:hover {
+  opacity: 1;
+  background-color: #aaa;
+}
+
+.disabled-button:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px
+}
+
+.disabled-button:focus {
+	outline:0;
+}
+
 .or-text {
   font-size: 20px;
 }
