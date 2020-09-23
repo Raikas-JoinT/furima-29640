@@ -1,5 +1,6 @@
 # テーブル設計b
 
+
 ## users テーブル
 
 | Column                | Type       | Options     |
