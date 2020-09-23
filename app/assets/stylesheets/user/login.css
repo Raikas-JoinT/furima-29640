@@ -12,6 +12,26 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 5px 5px #8b0000;
+  opacity: 0.8;
+}
+
+.login-red-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px
+}
+
+.login-red-btn:focus {
+	outline:0;
+}
+
+.login-red-btn:hover {
+  opacity: 1;
+  background-color:#ea352d;
+  cursor:pointer
 }
 
 .login-flash-message {
