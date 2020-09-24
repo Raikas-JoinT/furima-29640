@@ -17,6 +17,7 @@ class Item < ApplicationRecord
     validates :burden_id
     validates :area_id
     validates :day_id
+    validates :image
 
   end
 
